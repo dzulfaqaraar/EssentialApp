@@ -8,6 +8,8 @@
 import Foundation
 
 public final class ImageCommentsMapper {
+    private init() {}
+    
     private struct Root: Decodable {
         private let items: [Item]
         
