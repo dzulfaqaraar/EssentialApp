@@ -81,11 +81,11 @@ extension FeedImageCellController: ResourceView, ResourceLoadingView, ResourceEr
         cell?.feedImageView.setImageAnimated(viewModel)
     }
     
-    public func display(_ viewModel: EssentialFeed.ResourceLoadingViewModel) {
+    public func display(_ viewModel: ResourceLoadingViewModel) {
         cell?.feedImageContainer.isShimmering = viewModel.isLoading
     }
     
-    public func display(_ viewModel: EssentialFeed.ResourceErrorViewModel) {
+    public func display(_ viewModel: ResourceErrorViewModel) {
         cell?.feedImageRetryButton.isHidden = viewModel.message == nil
     }
 }
