@@ -365,9 +365,9 @@
 		B01B012F29469C980034432B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B01B013029469CBB0034432B /* XCTestCase+MemoryLeakTracking.swift */,
-				B08666F7294DABAA00216CF2 /* SharedTestHelpers.swift */,
 				B0C481B1297B5DA2004B2A52 /* SharedLocalizationTestsHelpers.swift */,
+				B08666F7294DABAA00216CF2 /* SharedTestHelpers.swift */,
+				B01B013029469CBB0034432B /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -471,9 +471,9 @@
 		B07A2AB4294CFC0900A0D4BC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B07A2AB5294CFC1600A0D4BC /* FeedStoreSpy.swift */,
 				B08666F5294DAB1F00216CF2 /* FeedCacheTestHelpers.swift */,
 				B023B7022969DC8800847BB4 /* FeedImageDataStoreSpy.swift */,
+				B07A2AB5294CFC1600A0D4BC /* FeedStoreSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -512,8 +512,8 @@
 		B08F4F4D2959D12000E7C7A4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B06EF36C2952A16F00FFF550 /* UIView+Shimmering.swift */,
 				B032D85C29548CBB00CFC59B /* UIImageView+Animations.swift */,
+				B06EF36C2952A16F00FFF550 /* UIView+Shimmering.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -582,9 +582,9 @@
 			isa = PBXGroup;
 			children = (
 				B09B5194293F794D00F09471 /* FeedImage.swift */,
-				B0D8AE18295360D800FE2379 /* FeedImageDataLoader.swift */,
 				B0D77C20296EF2EF00A69DDB /* FeedCache.swift */,
 				B0022DE3296F141A00348C43 /* FeedImageDataCache.swift */,
+				B0D8AE18295360D800FE2379 /* FeedImageDataLoader.swift */,
 			);
 			path = "Feed Feature";
 			sourceTree = "<group>";
@@ -657,8 +657,8 @@
 		B0C481CB297BD3F0004B2A52 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B032D85A29548BDE00CFC59B /* UITableView+Dequeueing.swift */,
 				B08F4F502959D1E200E7C7A4 /* UIRefreshControl+Helpers.swift */,
+				B032D85A29548BDE00CFC59B /* UITableView+Dequeueing.swift */,
 				B0D3DF9A29736E0D0024D137 /* UITableView+HeaderSizing.swift */,
 				B0DC8B7B297C87AD00E7E292 /* UIView+Container.swift */,
 			);
@@ -789,10 +789,10 @@
 			isa = PBXGroup;
 			children = (
 				B08F4F4D2959D12000E7C7A4 /* Helpers */,
+				B0BEFCA529835044004CC4ED /* LoadMoreCell.swift */,
 				B06EF36A2952874C00FFF550 /* FeedImageCell.swift */,
 				B032D85629547A8C00CFC59B /* Feed.storyboard */,
 				B032D85829547AAE00CFC59B /* Feed.xcassets */,
-				B0BEFCA529835044004CC4ED /* LoadMoreCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -941,6 +941,7 @@
 			buildConfigurationList = B09B518E293F794400F09471 /* Build configuration list for PBXNativeTarget "EssentialFeed" */;
 			buildPhases = (
 				B09B5177293F794400F09471 /* Headers */,
+				B03E80D129868AD200464CD8 /* SwiftFormat */,
 				B09B5178293F794400F09471 /* Sources */,
 				B09B5179293F794400F09471 /* Frameworks */,
 				B09B517A293F794400F09471 /* Resources */,
@@ -977,6 +978,7 @@
 			buildConfigurationList = B0D964B92950760000E24407 /* Build configuration list for PBXNativeTarget "EssentialFeediOS" */;
 			buildPhases = (
 				B0D964A5295075FF00E24407 /* Headers */,
+				B03E80D229868B1300464CD8 /* SwiftFormat */,
 				B0D964A6295075FF00E24407 /* Sources */,
 				B0D964A7295075FF00E24407 /* Frameworks */,
 				B0D964A8295075FF00E24407 /* Resources */,
@@ -1135,6 +1137,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B03E80D129868AD200464CD8 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ $OTHER_SWIFT_FLAGS == *\"-D ED_SKIP_SWIFT_FORMAT\"* ]]; then\n  exit 0;\nfi\n\n../BuildTools/SwiftFormat/swiftformat \"$SRCROOT\" --swiftversion 5 --indent tab --rules indent,linebreaks,trailingSpace,consecutiveBlankLines,blankLinesAtEndOfScope,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveSpaces,duplicateImports,elseOnSameLine,emptyBraces,redundantBreak,redundantInit,redundantLetError,redundantNilInit,redundantType,redundantVoidReturnType,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideGenerics,spaceInsideParens,void --quiet\n";
+		};
+		B03E80D229868B1300464CD8 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ $OTHER_SWIFT_FLAGS == *\"-D ED_SKIP_SWIFT_FORMAT\"* ]]; then\n  exit 0;\nfi\n\n../BuildTools/SwiftFormat/swiftformat \"$SRCROOT\" --swiftversion 5 --indent tab --rules indent,linebreaks,trailingSpace,consecutiveBlankLines,blankLinesAtEndOfScope,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveSpaces,duplicateImports,elseOnSameLine,emptyBraces,redundantBreak,redundantInit,redundantLetError,redundantNilInit,redundantType,redundantVoidReturnType,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideGenerics,spaceInsideParens,void --quiet\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B01B01342946B6AA0034432B /* Sources */ = {

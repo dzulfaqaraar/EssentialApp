@@ -152,10 +152,10 @@
 				B0167F5529715AAA00F26BD4 /* WeakRefVirtualProxy.swift */,
 				B0167F5F297167F900F26BD4 /* LoadResourcePresentationAdapter.swift */,
 				B0167F5D297163D300F26BD4 /* FeedViewAdapter.swift */,
+				B0BEFCAF298538BC004CC4ED /* NullStore.swift */,
 				B0A779E9296B293800B3C15F /* LaunchScreen.storyboard */,
 				B0A779E7296B293800B3C15F /* Assets.xcassets */,
 				B0A779EC296B293800B3C15F /* Info.plist */,
-				B0BEFCAF298538BC004CC4ED /* NullStore.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -208,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0A77A05296B293800B3C15F /* Build configuration list for PBXNativeTarget "EssentialApp" */;
 			buildPhases = (
+				B03E80D329868B3600464CD8 /* SwiftFormat */,
 				B0A779D7296B293700B3C15F /* Sources */,
 				B0A779D8296B293700B3C15F /* Frameworks */,
 				B0A779D9296B293700B3C15F /* Resources */,
@@ -296,6 +297,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B03E80D329868B3600464CD8 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ $OTHER_SWIFT_FLAGS == *\"-D ED_SKIP_SWIFT_FORMAT\"* ]]; then\n  exit 0;\nfi\n\n../BuildTools/SwiftFormat/swiftformat \"$SRCROOT\" --swiftversion 5 --indent tab --rules indent,linebreaks,trailingSpace,consecutiveBlankLines,blankLinesAtEndOfScope,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveSpaces,duplicateImports,elseOnSameLine,emptyBraces,redundantBreak,redundantInit,redundantLetError,redundantNilInit,redundantType,redundantVoidReturnType,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideGenerics,spaceInsideParens,void --quiet\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0A779D7296B293700B3C15F /* Sources */ = {
