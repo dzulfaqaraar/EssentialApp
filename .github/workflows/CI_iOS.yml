@@ -5,9 +5,9 @@ name: CI_iOS
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
 jobs:
   build-and-test:
@@ -16,5 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '14.2'
+        
     - name: Build and Test
-      run: xcodebuild clean build test -quiet -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=YES
+      run: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" -sdk iphonesimulator16.2 -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=YES
