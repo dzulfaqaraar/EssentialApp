@@ -152,10 +152,10 @@
 				B0167F5529715AAA00F26BD4 /* WeakRefVirtualProxy.swift */,
 				B0167F5F297167F900F26BD4 /* LoadResourcePresentationAdapter.swift */,
 				B0167F5D297163D300F26BD4 /* FeedViewAdapter.swift */,
+				B0BEFCAF298538BC004CC4ED /* NullStore.swift */,
 				B0A779E9296B293800B3C15F /* LaunchScreen.storyboard */,
 				B0A779E7296B293800B3C15F /* Assets.xcassets */,
 				B0A779EC296B293800B3C15F /* Info.plist */,
-				B0BEFCAF298538BC004CC4ED /* NullStore.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
