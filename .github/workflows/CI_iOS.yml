@@ -11,14 +11,21 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: macos-latest
+    runs-on: macos-13-xlarge
+    
+    timeout-minutes: 20
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v2
     
-    - uses: maxim-lobanov/setup-xcode@v1
+    - name: Select Xcode
+      uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: '14.2'
+        xcode-version: latest-stable
+      
+    - name: Xcode version
+      run: /usr/bin/xcodebuild -version
         
     - name: Build and Test
-      run: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" -sdk iphonesimulator16.2 -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=YES
+      run: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 15 Pro,OS=17.0.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=YES
