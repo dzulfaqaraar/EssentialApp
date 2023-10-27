@@ -941,7 +941,6 @@
 			buildConfigurationList = B09B518E293F794400F09471 /* Build configuration list for PBXNativeTarget "EssentialFeed" */;
 			buildPhases = (
 				B09B5177293F794400F09471 /* Headers */,
-				B03E80D129868AD200464CD8 /* SwiftFormat */,
 				B09B5178293F794400F09471 /* Sources */,
 				B09B5179293F794400F09471 /* Frameworks */,
 				B09B517A293F794400F09471 /* Resources */,
@@ -978,7 +977,6 @@
 			buildConfigurationList = B0D964B92950760000E24407 /* Build configuration list for PBXNativeTarget "EssentialFeediOS" */;
 			buildPhases = (
 				B0D964A5295075FF00E24407 /* Headers */,
-				B03E80D229868B1300464CD8 /* SwiftFormat */,
 				B0D964A6295075FF00E24407 /* Sources */,
 				B0D964A7295075FF00E24407 /* Frameworks */,
 				B0D964A8295075FF00E24407 /* Resources */,
@@ -1137,47 +1135,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B03E80D129868AD200464CD8 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ $OTHER_SWIFT_FLAGS == *\"-D ED_SKIP_SWIFT_FORMAT\"* ]]; then\n  exit 0;\nfi\n\n../BuildTools/SwiftFormat/swiftformat \"$SRCROOT\" --swiftversion 5 --indent tab --rules indent,linebreaks,trailingSpace,consecutiveBlankLines,blankLinesAtEndOfScope,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveSpaces,duplicateImports,elseOnSameLine,emptyBraces,redundantBreak,redundantInit,redundantLetError,redundantNilInit,redundantType,redundantVoidReturnType,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideGenerics,spaceInsideParens,void --quiet\n";
-		};
-		B03E80D229868B1300464CD8 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ $OTHER_SWIFT_FLAGS == *\"-D ED_SKIP_SWIFT_FORMAT\"* ]]; then\n  exit 0;\nfi\n\n../BuildTools/SwiftFormat/swiftformat \"$SRCROOT\" --swiftversion 5 --indent tab --rules indent,linebreaks,trailingSpace,consecutiveBlankLines,blankLinesAtEndOfScope,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveSpaces,duplicateImports,elseOnSameLine,emptyBraces,redundantBreak,redundantInit,redundantLetError,redundantNilInit,redundantType,redundantVoidReturnType,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideGenerics,spaceInsideParens,void --quiet\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B01B01342946B6AA0034432B /* Sources */ = {
