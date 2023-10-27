@@ -11,6 +11,8 @@ import EssentialFeed
 public final class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
 	private(set) public var errorView = ErrorView()
 
+    private var onViewIsAppearing: ((ListViewController) -> Void)?
+
 	public var onRefresh: (() -> Void)?
 
 	private lazy var dataSource: UITableViewDiffableDataSource<Int, CellController> = {
@@ -24,8 +26,18 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
 
 		configureTableView()
         configureTraitCollectionObservers()
-		refresh()
+		
+        onViewIsAppearing = { vc in
+            vc.onViewIsAppearing = nil
+            vc.refresh()
+        }
 	}
+    
+    public override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        
+        onViewIsAppearing?(self)
+    }
 
 	private func configureTableView() {
 		dataSource.defaultRowAnimation = .fade
